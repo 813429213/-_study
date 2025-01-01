@@ -1,0 +1,111 @@
+/* 页面背景和容器 */
+.search-result-container {
+  padding: 20px;
+  background-color: #f8f9fa; /* 更干净的背景色 */
+  min-height: 100vh;
+}
+
+.search-result-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50; /* 深色标题 */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 搜索结果列表 */
+.search-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 增加间距 */
+}
+
+/* 每个搜索结果项 */
+.search-result-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 更柔和的阴影 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-result-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 方形图片样式 */
+.search-result-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px; /* 圆角更大 */
+  margin-right: 20px; /* 增加右边距 */
+}
+
+/* 信息区域 */
+.search-result-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 景点名称样式 */
+.search-result-item-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #34495e; /* 深色标题 */
+  margin-bottom: 10px;
+}
+
+/* 简介样式 */
+.search-result-item-description {
+  font-size: 14px;
+  color: #7f8c8d; /* 灰色文字 */
+  margin-bottom: 15px;
+  line-height: 1.5; /* 增加行高 */
+}
+
+/* 按钮区域 */
+.search-result-item-buttons {
+  display: flex;
+  gap: 15px; /* 增加按钮间距 */
+}
+
+.btn-ticket, .btn-navigation {
+  width: auto;
+  padding: 8px 16px; /* 缩小内边距 */
+  font-size: 13px; /* 缩小字体大小 */
+  border-radius: 8px; /* 圆角更大 */
+  border: none;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  letter-spacing: 1px;
+  height: auto; /* 确保高度自适应 */
+  line-height: 1.5; /* 调整行高 */
+}
+
+.btn-ticket {
+  background-color: #3498db; /* 蓝色按钮 */
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+.btn-ticket:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-navigation {
+  background-color: #2ecc71; /* 绿色按钮 */
+  box-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
+}
+
+.btn-navigation:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}

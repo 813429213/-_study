@@ -1,0 +1,59 @@
+<view class="page-container">
+  <!-- 地图区域 -->
+  <view class="map-container">
+    <map
+      class="map"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      scale="{{scale}}"
+      markers="{{markers}}"
+      show-location
+    ></map>
+  </view>
+
+  <!-- 主要内容区域 -->
+  <view class="content-container">
+    <!-- 地址选择区域 -->
+    <view class="address-container">
+      <view class="address-item" style="width: 585rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx; height: 64rpx">
+        <view class="address-dot start"></view>
+        <view class="address-line" style="position: absolute; left: -12rpx; top: 1rpx; width: 12rpx; height: 112rpx; display: block; box-sizing: border-box"></view>
+        <input class="address-input" placeholder="当前位置" value="{{currentLocation}}" disabled />
+      </view>
+      <view class="address-item" style="width: 585rpx; height: 64rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+        <view class="address-dot end"></view>
+        <input style="width: 552rpx; display: block; box-sizing: border-box" class="address-input" placeholder="你要去哪儿？" bindinput="onInputDestination" value="{{destination}}" />
+      </view>
+    </view>
+
+    <!-- 车型选择区域 -->
+    <scroll-view scroll-y="true" class="car-list">
+      <block wx:for="{{carTypes}}" wx:key="id">
+        <view class="car-item {{selectedCarType === item.id ? 'selected' : ''}}" 
+              bindtap="onSelectCarType" 
+              data-id="{{item.id}}">
+          <view class="car-info">
+            <view class="car-main">
+              <image class="car-icon" src="{{item.icon}}" mode="aspectFit"/>
+              <view class="car-details">
+                <text class="car-name">{{item.name}}</text>
+                <text class="car-desc">{{item.description}}</text>
+              </view>
+            </view>
+            <view class="car-price-info">
+              <text class="car-price">¥{{item.price}}</text>
+              <text class="car-wait">{{item.waitTime}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+    <!-- 底部按钮区域 -->
+    <view class="bottom-bar">
+      <button class="call-car-btn {{destination ? 'active' : ''}}" bindtap="onCallCar">
+        呼叫{{carTypes[selectedCarType-1].name}}
+      </button>
+    </view>
+  </view>
+</view>

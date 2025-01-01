@@ -1,0 +1,28 @@
+<view class="orders-container">
+  <block wx:if="{{orders.length > 0}}">
+    <view class="order-item" wx:for="{{orders}}" wx:key="id" bindtap="viewOrderDetail" data-id="{{item.id}}">
+      <view class="order-header">
+        <text class="hotel-name">{{item.hotelName}}</text>
+        <text class="order-status">{{item.status}}</text>
+      </view>
+      <view class="order-info">
+        <view class="info-row">
+          <text class="label">房型：</text>
+          <text class="value">{{item.roomName}}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">入住时间：</text>
+          <text class="value">{{item.checkIn}} - {{item.checkOut}}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">订单金额：</text>
+          <text class="price">¥{{item.totalPrice}}</text>
+        </view>
+      </view>
+      <button class="cancel-order-btn" catchtap="cancelOrder" data-id="{{item.id}}">取消订单</button>
+    </view>
+  </block>
+  <view wx:else class="no-orders">
+    <text>暂无订单</text>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<view class="container">
+  <!-- 景点图片 -->
+  <image class="spot-image" src="{{spot.image}}" mode="aspectFill"></image>
+
+  <!-- 景点信息卡片 -->
+  <view class="spot-info-card">
+    <text class="spot-name">{{spot.name}}</text>
+    <text class="spot-description">{{spot.description}}</text>
+
+    <!-- 景点详细信息 -->
+    <view class="spot-details">
+      <view class="detail-item">
+        <!-- <image src="../../images/icons/time.png" class="detail-icon" /> -->
+        <text class="detail-title">开放时间：</text>
+        <text class="detail-content">{{spot.openingHours}}</text>
+      </view>
+      <view class="detail-item">
+        <!-- <image src="../../images/icons/location.png" class="detail-icon" /> -->
+        <text class="detail-title">地址：</text>
+        <text class="detail-content">{{spot.address}}</text>
+      </view>
+      <view class="detail-item">
+        <!-- <image src="../../images/icons/ticket.png" class="detail-icon" /> -->
+        <text class="detail-title">票价：</text>
+        <text class="detail-content">{{spot.ticketPrice}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 购票按钮、返回按钮 -->
+  <button class="buy-button" bindtap="onBookTicket">预约购票</button>
+
+  <button class="back-button" bindtap="onBack">返回</button>
+  
+</view>

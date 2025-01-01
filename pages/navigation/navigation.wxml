@@ -1,0 +1,16 @@
+<view class="container">
+  <map
+    id="map"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    markers="{{markers}}"
+    scale="14"
+    show-location
+    style="width: 100%; height: 100vh;"
+  ></map>
+  
+  <view class="navigation-info">
+    <text class="spot-name">{{spotInfo.name}}</text>
+    <button class="nav-button" bindtap="openInMapApp">打开地图导航</button>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<view class="container">
+  <text class="title">选择行程信息</text>
+
+  <!-- 景点名称显示 -->
+  <view class="spot-info">
+    <text class="spot-name">{{spotName}}</text>
+  </view>
+
+  <!-- 日期选择 -->
+  <picker mode="date" value="{{selectedDate}}" start="{{today}}" bindchange="onDateChange">
+    <view class="picker">
+      <image class="icon" src="../../images/icons/date.png" />
+      <text>选择日期：</text>
+      <text class="picker-value">{{selectedDate}}</text>
+    </view>
+  </picker>
+
+  <!-- 票数选择 -->
+  <picker mode="selector" range="{{ticketOptions}}" bindchange="onTicketChange">
+    <view class="picker">
+      <image class="icon" src="../../images/icons/amount.png" />
+      <text>购票张数：</text>
+      <text class="picker-value">{{ticketCount}}</text>
+    </view>
+  </picker>
+
+  <!-- 确认按钮 -->
+  <button class="confirm-button" bindtap="onConfirmBooking">确认并添加到行程</button>
+</view>

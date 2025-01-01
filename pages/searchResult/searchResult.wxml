@@ -1,0 +1,27 @@
+<view class="search-result-container">
+  <!-- 搜索结果标题 -->
+  <view class="search-result-title">搜索结果</view>
+
+  <!-- 搜索结果列表 -->
+  <view class="search-result-list">
+    <block wx:for="{{searchResultSpots}}" wx:key="index">
+      <!-- 每个搜索结果项 -->
+      <view class="search-result-item">
+        <!-- 方形图片 -->
+        <image class="search-result-item-image" src="{{item.image}}" alt="{{item.name}}" />
+        <!-- 信息区域 -->
+        <view class="search-result-item-info">
+          <!-- 景点名称 -->
+          <text class="search-result-item-title">{{item.name}}</text>
+          <!-- 简介 -->
+          <text class="search-result-item-description">{{item.description}}</text>
+          <!-- 按钮区域 -->
+          <view class="search-result-item-buttons">
+            <button class="btn-ticket" bindtap="onTicketClick" data-id="{{item.id}}" data-name="{{item.name}}">去购票</button>
+            <button class="btn-navigation" bindtap="onNavigateClick" data-id="{{item.id}}">打车去</button>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

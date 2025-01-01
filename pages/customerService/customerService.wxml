@@ -1,0 +1,79 @@
+<!--pages/customerService/customerService.wxml-->
+<view class="page">
+  <!-- 头部区域 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="service-title">票小密在线客服</view>
+      <view class="service-desc">竭诚为您服务</view>
+    </view>
+  </view>
+
+  <!-- 主要内容区域 -->
+  <view class="content">
+    <!-- 快速服务入口 -->
+    <view class="service-grid">
+      <button class="grid-item" open-type="contact" bindcontact="handleContact">
+        <view class="grid-icon">💬</view>
+        <text>在线客服</text>
+      </button>
+      <view class="grid-item" bindtap="callService">
+        <view class="grid-icon">📞</view>
+        <text>电话客服</text>
+      </view>
+      <view class="grid-item" bindtap="copyServicePhone">
+        <view class="grid-icon">📋</view>
+        <text>复制电话</text>
+      </view>
+    </view>
+
+    <!-- 服务时间 -->
+    <view class="info-card">
+      <view class="card-title">服务时间</view>
+      <view class="time-list">
+        <view class="time-item">
+          <view class="time-icon">💬</view>
+          <view class="time-detail">
+            <text class="time-type">在线客服</text>
+            <text class="time-period">09:00 - 22:00</text>
+          </view>
+        </view>
+        <view class="time-item">
+          <view class="time-icon">📞</view>
+          <view class="time-detail">
+            <text class="time-type">电话客服</text>
+            <text class="time-period">09:00 - 18:00</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 常见问题 -->
+    <view class="info-card">
+      <view class="card-title">常见问题</view>
+      <view class="faq-list">
+        <view class="faq-item" wx:for="{{faqs}}" wx:key="question">
+          <view class="faq-question">
+            <text class="q-icon">Q</text>
+            <text class="question-text">{{item.question}}</text>
+          </view>
+          <view class="faq-answer">
+            <text class="a-icon">A</text>
+            <text class="answer-text">{{item.answer}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 联系电话 -->
+    <view class="info-card">
+      <view class="card-title">联系电话</view>
+      <view class="contact-box">
+        <text class="contact-phone">400-123-4567</text>
+        <view class="contact-btns">
+          <button class="btn secondary" bindtap="copyServicePhone">复制号码</button>
+          <button class="btn primary" bindtap="callService">立即拨打</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

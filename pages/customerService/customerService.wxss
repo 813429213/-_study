@@ -1,0 +1,244 @@
+/* pages/customerService/customerService.wxss */
+
+/* 容器样式 */
+.page {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+/* 头部样式 */
+.header {
+  background: linear-gradient(135deg, #1296db, #0cc3e8);
+  padding: 40rpx 30rpx;
+  padding-top: calc(40rpx + env(safe-area-inset-top));
+  color: #fff;
+}
+
+.header-content {
+  margin-top: 40rpx;
+}
+
+.service-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.service-desc {
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+
+/* 内容区域 */
+.content {
+  padding: 30rpx;
+  margin-top: -30rpx;
+}
+
+/* 服务网格 */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20rpx;
+  background: #fff;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 30rpx;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  padding: 20rpx;
+  line-height: 1.5;
+  border-radius: 12rpx;
+  transition: all 0.3s;
+}
+
+.grid-item::after {
+  border: none;
+}
+
+.grid-item:active {
+  background-color: #f5f7fa;
+}
+
+.grid-icon {
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
+}
+
+.grid-item text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+/* 信息卡片 */
+.info-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 时间列表 */
+.time-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.time-item {
+  display: flex;
+  align-items: center;
+  padding: 16rpx;
+  background: #f8f9fd;
+  border-radius: 12rpx;
+}
+
+.time-icon {
+  font-size: 36rpx;
+  margin-right: 16rpx;
+}
+
+.time-detail {
+  flex: 1;
+}
+
+.time-type {
+  font-size: 26rpx;
+  color: #333;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.time-period {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+}
+
+/* FAQ列表 */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.faq-item {
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 24rpx;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-question {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12rpx;
+}
+
+.q-icon, .a-icon {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.q-icon {
+  background: #1296db;
+  color: #fff;
+}
+
+.a-icon {
+  background: #f0f7ff;
+  color: #1296db;
+}
+
+.question-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.5;
+}
+
+.faq-answer {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 16rpx;
+}
+
+.answer-text {
+  flex: 1;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 联系电话 */
+.contact-box {
+  background: #f8f9fd;
+  border-radius: 12rpx;
+  padding: 24rpx;
+}
+
+.contact-phone {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  text-align: center;
+  margin-bottom: 24rpx;
+}
+
+.contact-btns {
+  display: flex;
+  gap: 20rpx;
+}
+
+.btn {
+  flex: 1;
+  font-size: 28rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn.primary {
+  background: #1296db;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #1296db;
+  border: 2rpx solid #1296db;
+}

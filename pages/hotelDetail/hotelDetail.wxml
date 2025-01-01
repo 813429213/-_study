@@ -1,0 +1,70 @@
+<view>
+  <!-- 酒店图片轮播 -->
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item wx:for="{{hotel.images}}" wx:key="index">
+      <image src="{{item}}" mode="aspectFill" class="swiper-image"/>
+    </swiper-item>
+  </swiper>
+
+  <!-- 酒店基本信息 -->
+  <view class="info-card">
+    <view class="hotel-name">{{hotel.name}}</view>
+    <view class="hotel-rating">
+      <text class="rating">{{hotel.rating}}分</text>
+      <text class="comment-count">({{hotel.commentCount}}条点评)</text>
+    </view>
+    <view class="hotel-address">
+      <text class="label">地址：</text>
+      <text>{{hotel.address}}</text>
+    </view>
+  </view>
+
+  <!-- 房型列表 -->
+  <view class="room-section">
+    <view class="section-title">房型列表</view>
+    <!-- 日期选择 -->
+    <view class="date-picker">
+      <picker mode="date" value="{{checkInDate}}" start="{{today}}" end="{{maxDate}}" bindchange="onCheckInChange">
+        <view class="picker-item">
+          <text class="label">入住</text>
+          <text class="value">{{checkInDate}}</text>
+        </view>
+      </picker>
+      <text class="separator">-</text>
+      <picker mode="date" value="{{checkOutDate}}" start="{{checkInDate}}" end="{{maxDate}}" bindchange="onCheckOutChange">
+        <view class="picker-item">
+          <text class="label">离店</text>
+          <text class="value">{{checkOutDate}}</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 房型列表 -->
+    <view class="room-list">
+      <view class="room-item" wx:for="{{hotel.rooms}}" wx:key="id">
+        <image class="room-image" src="{{item.image}}" mode="aspectFill"/>
+        <view class="room-info">
+          <view class="room-name">{{item.name}}</view>
+          <view class="room-tags">
+            <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+          </view>
+          <view class="room-price">
+            <text class="price">¥{{item.price}}</text>
+            <text class="unit">/晚</text>
+          </view>
+        </view>
+        <button class="book-btn" bindtap="onBookRoom" data-room="{{item}}">预订</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 酒店设施 -->
+  <view class="facility-section">
+    <view class="section-title">酒店设施</view>
+    <view class="facility-grid">
+      <view class="facility-item" wx:for="{{hotel.facilities}}" wx:key="index">
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>

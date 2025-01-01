@@ -1,0 +1,9 @@
+<view class="container">
+  <!-- Logo和标题 -->
+  <!-- <image class="logo" src="../../images/logo.png" mode="aspectFill" /> -->
+  <text class="title">微信登录</text>
+
+  <!-- 微信登录按钮 -->
+  <button class="login-button" bindtap="onWeChatLogin">微信一键登录</button>
+
+</view>

@@ -1,0 +1,174 @@
+.container {
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.swiper {
+  width: 100%;
+  height: 500rpx;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+}
+
+.info-card {
+  background: #fff;
+  padding: 20rpx;
+  width: 100%;
+}
+
+.hotel-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.hotel-rating {
+  margin-bottom: 10rpx;
+}
+
+.rating {
+  color: #ff9900;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+
+.comment-count {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.hotel-address {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.label {
+  color: #999;
+  margin-right: 10rpx;
+}
+
+.room-section {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.date-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.picker-item {
+  text-align: center;
+}
+
+.separator {
+  margin: 0 30rpx;
+  color: #999;
+}
+
+.room-list {
+  margin-top: 20rpx;
+}
+
+.room-item {
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.room-image {
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.room-info {
+  flex: 1;
+}
+
+.room-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.room-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10rpx;
+}
+
+.tag {
+  font-size: 24rpx;
+  color: #666;
+  background: #f5f5f5;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.room-price {
+  display: flex;
+  align-items: baseline;
+}
+
+.price {
+  font-size: 36rpx;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 4rpx;
+}
+
+.book-btn {
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  margin: auto 0;
+  background: #1296db;
+  color: #fff;
+  border-radius: 30rpx;
+}
+
+.facility-section {
+  background: #fff;
+  border-radius: 50rpx;
+  padding: 10rpx;
+}
+
+.facility-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.facility-item {
+  width: 25%;
+  text-align: center;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+}

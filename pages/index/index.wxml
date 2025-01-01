@@ -1,0 +1,69 @@
+<view class="container">
+  
+  <!-- 搜索框区域 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索景点或活动" bindinput="onSearchInput" value="{{searchInputValue}}"/>
+    <button class="search-button" bindtap="onSearchButtonClick">
+      <text class="search-button-text">搜索</text>
+    </button>
+  </view>
+
+  <!-- 轮播图区域 -->
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true">
+    <swiper-item>
+      <image class="swiper-image" src="https://tse2-mm.cn.bing.net/th/id/OIP-C.WJjTgophIL54yE3t6Hu-bAHaEa?rs=1&pid=ImgDetMain" alt="南昌"></image>
+      <text class="swiper-text">南昌</text>
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-image" src="https://kimi-img.moonshot.cn/webimg2/www.hljpic.cn/3d4a4cf800242ca4d49a97085fe2589945579f66" alt="庐山"></image>
+      <text class="swiper-text">庐山</text>
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-image" src="https://kimi-img.moonshot.cn/webimg2/n.sinaimg.cn/f846b72327c2f906d1d4c0d42c3e504ca466db41" alt="婺源"></image>
+      <text class="swiper-text">婺源</text>
+    </swiper-item>
+    
+  </swiper>
+
+  <!-- 顶部城市选择（水平滚动） -->
+<scroll-view scroll-x="true" class="city-select" style="height: 110rpx; display: flex; box-sizing: border-box">
+  <view class="city-buttons-container">
+    <block wx:for="{{cities}}" wx:key="index">
+      <view class="city-button" bindtap="onCityChange" data-city="{{item}}">
+        <text class="city-button-text">{{item}}</text>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+  <!-- 新增的天气、酒店、打车区域 -->
+  <view class="service-options" style="height: 110rpx; display: flex; box-sizing: border-box; width: 693rpx">
+    <view class="service-option" bindtap="onWeatherClick">
+      <image class="service-icon" src="../../images/icons/weather.png" alt="天气"/>
+      <text class="service-text">天气</text>
+    </view>
+    <view class="service-option" bindtap="onHotelClick">
+      <image class="service-icon" src="../../images/icons/hotel.png" alt="酒店"/>
+      <text class="service-text">酒店</text>
+    </view>
+    <view class="service-option" bindtap="onTaxiClick">
+      <image class="service-icon" src="../../images/icons/car-rental.png" alt="打车"/>
+      <text class="service-text">打车</text>
+    </view>
+  </view>
+
+  <!-- 推荐景点 -->
+  <view class="recommended">
+    <view class="card-list" style="height: 1581rpx; display: flex; box-sizing: border-box">
+      <block wx:for="{{recommendedSpots}}" wx:key="index">
+        <view class="card" bindtap="onSpotClick" data-id="{{item.id}}" data-name="{{item.name}}">
+          <image class="card-image" src="{{item.image}}" alt="{{item.name}}"/>
+          <view class="card-info">
+            <text class="card-title">{{item.name}}</text>
+            <text class="card-description">{{item.description}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

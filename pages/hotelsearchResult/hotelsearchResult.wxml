@@ -1,0 +1,47 @@
+<!--pages/hotelsearchResult/hotelsearchResult.wxml-->
+<view class="container">
+  <!-- 搜索结果标题和筛选 -->
+  <view class="search-header">
+    <view class="result-count">找到 {{hotels.length}} 家酒店</view>
+    <view class="filter-tags">
+      <text class="tag {{currentFilter === 'default' ? 'active' : ''}}" bindtap="onFilterTap" data-filter="default">默认排序</text>
+      <text class="tag {{currentFilter === 'price' ? 'active' : ''}}" bindtap="onFilterTap" data-filter="price">价格</text>
+      <text class="tag {{currentFilter === 'rating' ? 'active' : ''}}" bindtap="onFilterTap" data-filter="rating">评分</text>
+    </view>
+  </view>
+
+  <!-- 酒店列表 -->
+  <scroll-view class="hotel-list" scroll-y="true">
+    <block wx:if="{{hotels.length > 0}}">
+      <view 
+        class="hotel-card" 
+        wx:for="{{hotels}}" 
+        wx:key="id" 
+        bindtap="onHotelTap" 
+        data-id="{{item.id}}"
+      >
+        <image class="hotel-image" src="{{item.image}}" mode="aspectFill"/>
+        <view class="hotel-info">
+          <text class="hotel-name">{{item.name}}</text>
+          <view class="hotel-rating">
+            <text class="rating">{{item.rating}}分</text>
+            <text class="rating-text">很好</text>
+          </view>
+          <view class="hotel-tags">
+            <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+          </view>
+          <view class="hotel-address">{{item.address}}</view>
+          <view class="hotel-price">
+            <text class="price-unit">¥</text>
+            <text class="price-value">{{item.price}}</text>
+            <text class="price-text">起</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view wx:else class="empty-state">
+      <text>未找到相关酒店</text>
+      <view class="suggestion">试试其他关键词，如"商务"、"五星级"等</view>
+    </view>
+  </scroll-view>
+</view>

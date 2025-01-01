@@ -1,0 +1,38 @@
+<view class="container">
+  <!-- 搜索区域 -->
+  <view class="search-box" style="height: 79rpx; display: flex; box-sizing: border-box">
+    <input style="height: 50rpx; display: block; box-sizing: border-box" 
+      class="search-input" 
+      placeholder="搜索酒店" 
+      bindinput="onSearchInput"
+      value="{{keyword}}"
+    />
+    <button class="search-btn" bindtap="onSearch" style="height: 74rpx; display: block; box-sizing: border-box; left: -20rpx; top: -18rpx; position: relative">搜索</button>
+  </view>
+
+  <!-- 酒店列表 -->
+  <scroll-view class="hotel-list" scroll-y="true">
+    <view 
+      class="hotel-card" 
+      wx:for="{{hotels}}" 
+      wx:key="id" 
+      bindtap="onHotelTap" 
+      data-id="{{item.id}}"
+    >
+      <image class="hotel-image" src="{{item.image}}" mode="aspectFill"/>
+      <view class="hotel-info">
+        <text class="hotel-name">{{item.name}}</text>
+        <view class="hotel-rating">{{item.rating}}分</view>
+        <view class="hotel-tags">
+          <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+        </view>
+        <view class="hotel-address">{{item.address}}</view>
+        <view class="hotel-price">
+          <text class="price-unit">¥</text>
+          <text class="price-value">{{item.price}}</text>
+          <text class="price-text">起</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

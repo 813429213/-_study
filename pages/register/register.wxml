@@ -1,0 +1,6 @@
+<view class="register-container">
+  <input class="phone-input" type="number" placeholder="请输入手机号" />
+  <input class="code-input" type="number" placeholder="请输入验证码" />
+  <input class="password-input" type="password" placeholder="设置密码" />
+  <button bindtap="register">注册</button>
+</view>

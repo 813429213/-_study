@@ -1,0 +1,25 @@
+<view class="container">
+  <text class="title">我的行程</text>
+  <block wx:for="{{plan}}" wx:key="index">
+    <view class="plan-card">
+      <!-- 左侧行程信息部分 -->
+      <view class="plan-info">
+        <text class="spot-name">{{item.spotName}}</text>
+        <view class="detail">
+          <text class="detail-label">日期：</text>
+          <text class="detail-value">{{item.date}}</text>
+        </view>
+        <view class="detail">
+          <text class="detail-label">票数：</text>
+          <text class="detail-value">{{item.ticketCount}}</text>
+        </view>
+      </view>
+      
+      <!-- 右侧按钮部分 -->
+      <view class="button-group">
+        <button class="button delete-button" data-index="{{index}}" bindtap="onDelete">删除</button>
+        <button class="button navigate-button" data-index="{{index}}" bindtap="onNavigate">导航</button>
+      </view>
+    </view>
+  </block>
+</view>
